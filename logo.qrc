@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>res/propulse_logo.png</file>
+        <file>res/Sleipner_nobkg.png</file>
+    </qresource>
+</RCC>
