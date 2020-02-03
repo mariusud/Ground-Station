@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMediaPlayer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -13,9 +14,16 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
+    void setup_media();
     ~MainWindow();
 
 private:
     Ui::MainWindow *ui;
+
+private slots:
+    void start_countdown();
+    void reset_countdown();
+    void update_countdown();
+
 };
 #endif // MAINWINDOW_H
