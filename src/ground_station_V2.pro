@@ -1,6 +1,7 @@
-QT       += core gui uiplugin widgets multimediawidgets multimedia
+QT       += core gui uiplugin widgets multimediawidgets multimedia network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets core gui uiplugin widgets multimediawidgets multimedia
+#requires(qtConfig(udpsocket))
 
 CONFIG += c++11
 
@@ -17,10 +18,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    network.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    network.h
 
 FORMS += \
     mainwindow.ui

@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QMediaPlayer>
 
+#include "network.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -16,6 +18,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     void setup_media();
     ~MainWindow();
+
+public slots:
+    void display_message(const QString &from, const QString &message);
 
 private:
     Ui::MainWindow *ui;
