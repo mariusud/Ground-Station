@@ -68,6 +68,11 @@ void MainWindow::display_message(const QString &from, const QString &message ){
 
 }
 
+void MainWindow::display_payload(QByteArray &data){
+    qDebug("inside maindow: " + data);
+    ui->current_altitude->setText(data.constData());
+}
+
 
 /*!
     \class MainWindow::setupmedia()
@@ -81,8 +86,8 @@ void MainWindow::setup_media(){
     QGraphicsScene *scene = new QGraphicsScene;
 
     ui->videostreamui->setScene(scene);
-    player->setMedia(QUrl("udp://192.168.9.1:8080"));
-    //player->play();
+    player->setMedia(QUrl("udp://@:8003"));
+    player->play();
 
 }
 

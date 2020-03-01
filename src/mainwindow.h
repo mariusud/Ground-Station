@@ -21,6 +21,8 @@ public:
 
 public slots:
     void display_message(const QString &from, const QString &message);
+    void display_payload(QByteArray &data);
+
 
 private:
     Ui::MainWindow *ui;

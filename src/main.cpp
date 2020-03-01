@@ -10,7 +10,12 @@ int main(int argc, char *argv[])
     Network network;
 
     QObject::connect(&network,SIGNAL( sendTextToUI(const QString, const QString)), &w, SLOT( display_message(const QString, const QString)));
-    emit network.sendTextToUI(test,test);
+    QObject::connect(&network,SIGNAL( sendPayloadToUI(QByteArray data)), &w, SLOT( display_payload(QbyteArray data)));
+
+
+    network.listen();
+    network.startBroadcasting();
+    //emit network.sendTextToUI(test,test);
     //w.display_message(test,test);
     w.showFullScreen();
     return a.exec();
