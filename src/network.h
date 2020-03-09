@@ -22,7 +22,7 @@ public:
 
 signals:
     void sendTextToUI( const QString &from, const QString &message);
-    void sendPayloadToUI(QByteArray data =);
+    void sendPayloadToUI(QByteArray data);
 
 private slots:
     void processPayloadPendingDatagrams(); // for reading udp message byte for byte
@@ -34,6 +34,15 @@ private:
     void processDatagram(QNetworkDatagram datagram, QHostAddress sender, quint16 senderPort);
     QLabel *statusLabel = nullptr;
     QUdpSocket *udpSocket;
+    QString StringBuffer;
+    void init();
+
+
+    quint16 crc;
+    const QString *address;
+    QByteArray buffer;
+    float* sensorData; // Stores data
+    uint16_t packageNumber; // Stores current package number
 };
 
 #endif // NETWORK_H

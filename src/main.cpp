@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "network.h"
 #include <QApplication>
-
+#include "parser.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -10,11 +10,14 @@ int main(int argc, char *argv[])
     Network network;
 
     QObject::connect(&network,SIGNAL( sendTextToUI(const QString, const QString)), &w, SLOT( display_message(const QString, const QString)));
-    QObject::connect(&network,SIGNAL( sendPayloadToUI(QByteArray data)), &w, SLOT( display_payload(QbyteArray data)));
+    //QObject::connect(&network,SIGNAL( sendPayloadToUI(QByteArray data)), &w, SLOT( display_payload(QbyteArray data)));
 
 
     network.listen();
     network.startBroadcasting();
+
+    read_datagram();
+
     //emit network.sendTextToUI(test,test);
     //w.display_message(test,test);
     w.showFullScreen();
