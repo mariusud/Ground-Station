@@ -1092,7 +1092,7 @@
           <widget class="QLineEdit" name="lineEdit_7"/>
          </item>
          <item row="6" column="1">
-          <widget class="QLineEdit" name="lineEdit_8"/>
+          <widget class="QLineEdit" name="magneticvariation"/>
          </item>
          <item row="1" column="1">
           <widget class="QLabel" name="label_18">
@@ -1109,7 +1109,7 @@
           </widget>
          </item>
          <item row="2" column="1">
-          <widget class="QLineEdit" name="lineEdit_9"/>
+          <widget class="QLineEdit" name="pressure"/>
          </item>
          <item row="7" column="1">
           <widget class="QLabel" name="label_20">
@@ -1119,7 +1119,7 @@
           </widget>
          </item>
          <item row="2" column="0">
-          <widget class="QLineEdit" name="lineEdit_10"/>
+          <widget class="QLineEdit" name="temperature"/>
          </item>
          <item row="8" column="0">
           <widget class="QLineEdit" name="lineEdit_11"/>
@@ -1137,14 +1137,14 @@
          <item row="3" column="1">
           <widget class="QLabel" name="label_22">
            <property name="text">
-            <string>Free slot</string>
+            <string>Magnetic Variation</string>
            </property>
           </widget>
          </item>
          <item row="1" column="0">
           <widget class="QLabel" name="label_23">
            <property name="text">
-            <string>Temperature 1 (Celsius)</string>
+            <string>Temperature (Celsius)</string>
            </property>
           </widget>
          </item>
@@ -1167,16 +1167,65 @@
       <item row="1" column="0">
        <widget class="QWidget" name="gridWidget_2" native="true">
         <layout class="QGridLayout" name="gridLayout_3">
-         <item row="6" column="0">
-          <widget class="QLineEdit" name="current_altitude"/>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="maxacceleration"/>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>Max Altitude (m)</string>
+           </property>
+          </widget>
          </item>
          <item row="6" column="1">
           <widget class="QLineEdit" name="maxaltitude"/>
          </item>
-         <item row="1" column="1">
-          <widget class="QLabel" name="label_8">
+         <item row="8" column="1">
+          <widget class="QLineEdit" name="latitude"/>
+         </item>
+         <item row="10" column="0">
+          <widget class="QLineEdit" name="angularaccel"/>
+         </item>
+         <item row="11" column="1">
+          <widget class="QLabel" name="label_12">
            <property name="text">
-            <string>Max velocity (m/s)</string>
+            <string>Course Over Ground</string>
+           </property>
+          </widget>
+         </item>
+         <item row="11" column="0">
+          <widget class="QLabel" name="label_11">
+           <property name="text">
+            <string>Speed over Ground</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>Acceleration (m/s²)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLineEdit" name="acceleration"/>
+         </item>
+         <item row="8" column="0">
+          <widget class="QLineEdit" name="longitude"/>
+         </item>
+         <item row="12" column="0">
+          <widget class="QLineEdit" name="speedoverground"/>
+         </item>
+         <item row="12" column="1">
+          <widget class="QLineEdit" name="courseoverground"/>
+         </item>
+         <item row="10" column="1">
+          <widget class="QLineEdit" name="free"/>
+         </item>
+         <item row="7" column="1">
+          <widget class="QLabel" name="label_9">
+           <property name="text">
+            <string>Latitude</string>
            </property>
           </widget>
          </item>
@@ -1187,43 +1236,17 @@
            </property>
           </widget>
          </item>
-         <item row="2" column="1">
-          <widget class="QLineEdit" name="max_velocity"/>
-         </item>
-         <item row="7" column="1">
-          <widget class="QLabel" name="label_9">
+         <item row="1" column="1">
+          <widget class="QLabel" name="label_8">
            <property name="text">
-            <string>Latitude</string>
+            <string>Max Acceleration (m/s²)</string>
            </property>
           </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QLineEdit" name="current_velocity"/>
-         </item>
-         <item row="8" column="0">
-          <widget class="QLineEdit" name="longitude"/>
-         </item>
-         <item row="8" column="1">
-          <widget class="QLineEdit" name="latitude"/>
          </item>
          <item row="7" column="0">
-          <widget class="QLabel" name="label_10">
+          <widget class="QLabel" name="longitude_2">
            <property name="text">
             <string>Longitude</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="1">
-          <widget class="QLabel" name="label_6">
-           <property name="text">
-            <string>Max Altitude (m)</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="label_7">
-           <property name="text">
-            <string>Current Velocity (m/s)</string>
            </property>
           </widget>
          </item>
@@ -1237,6 +1260,23 @@
            </property>
            <property name="text">
             <string>Flight Data</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLineEdit" name="current_altitude"/>
+         </item>
+         <item row="9" column="0">
+          <widget class="QLabel" name="label_25">
+           <property name="text">
+            <string>Angular Acceleration</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="1">
+          <widget class="QLabel" name="label_26">
+           <property name="text">
+            <string>Free</string>
            </property>
           </widget>
          </item>
@@ -1261,8 +1301,14 @@
         </item>
         <item row="2" column="0">
          <widget class="QCheckBox" name="checkBox">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
           <property name="text">
            <string>Armed</string>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
           </property>
          </widget>
         </item>

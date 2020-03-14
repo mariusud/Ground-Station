@@ -21,11 +21,12 @@ public:
 
 public slots:
     void display_message(const QString &from, const QString &message);
-    void display_payload(QByteArray &data);
+    void display_payload(const QList<QString> &sensorDataList);
 
 
 private:
     Ui::MainWindow *ui;
+    //Network network; // construct network
 
 private slots:
     void start_countdown();

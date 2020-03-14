@@ -9,8 +9,9 @@
 #include <QMediaPlayer>
 #include <QVideoWidget>
 #include <QGraphicsScene>
-
+#include <QObject>
 #include <QDebug>
+#include <QString>
 
 QElapsedTimer etimer;
 QTimer* timer = new QTimer();
@@ -24,7 +25,16 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     connect(ui->fire_rocket,SIGNAL(clicked()),SLOT(start_countdown()));
     connect(ui->cancel_firing, SIGNAL(clicked()), SLOT(reset_countdown()));
-    setup_media();
+    qRegisterMetaType< QList<QString> >( "QList<QString>" );
+    Network network;
+    connect(&network, SIGNAL(sendPayloadToUI(const QList<QString>)), this, SLOT(display_payload(const QList<QString>)));
+    connect(&network, SIGNAL( sendTextToUI(const QString, const QString)), this, SLOT( display_message(const QString, const QString)));
+    QList<QString> s = {"first","second"};
+    emit network.sendPayloadToUI(s);
+    //setup_media();
+    network.listen();
+    network.startBroadcasting();
+
 }
 
 MainWindow::~MainWindow()
@@ -68,9 +78,25 @@ void MainWindow::display_message(const QString &from, const QString &message ){
 
 }
 
-void MainWindow::display_payload(QByteArray &data){
-    qDebug("inside maindow: " + data);
-    ui->current_altitude->setText(data.constData());
+/*!
+    \class MainWindow::display_payload(const QList<QString> &sensorDataList)
+
+    \brief Sets up sensordata on ui form, also asserts that sensordata not empty to not get error
+*/
+void MainWindow::display_payload(const QList<QString> &sensorDataList){
+    QList<QString> sensordata = sensorDataList;
+     //   TEMPERATURE, PRESSURE, SPEEDOVERGROUND, COURSEOVERGROUND, MAGNETICVARIATION, LONGITUDE,LATITUDE, ALTITUDE, ACCELERATION, ANGULARACCELERATION, CRCBYTES
+    if(!sensordata.isEmpty()){ui->temperature->setText(sensordata.takeFirst());}
+    if(!sensordata.isEmpty()){ui->pressure->setText(sensordata.takeFirst());}
+    if(!sensordata.isEmpty()){ui->speedoverground->setText(sensordata.takeFirst());}
+    if(!sensordata.isEmpty()){ui->courseoverground->setText(sensordata.takeFirst());}
+    if(!sensordata.isEmpty()){ui->magneticvariation->setText(sensordata.takeFirst());}
+    if(!sensordata.isEmpty()){ui->longitude->setText(sensordata.takeFirst());}
+    if(!sensordata.isEmpty()){ui->latitude->setText("S");}
+    if(!sensordata.isEmpty()){ui->current_altitude->setText(sensordata.takeFirst());}
+    if(!sensordata.isEmpty()){ui->acceleration->setText(sensordata.takeFirst());}
+    if(!sensordata.isEmpty()){ui->angularaccel->setText(sensordata.takeFirst());}
+
 }
 
 
