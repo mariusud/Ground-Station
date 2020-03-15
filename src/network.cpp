@@ -5,36 +5,31 @@
 #include <QDebug>
 Network::Network(QObject *parent) : QObject(parent)
 {
+udpSocket = new QUdpSocket(this);
+udpSocket->bind(QHostAddress::LocalHost, 8002);
+//udpSocket->bind(QHostAddress("10.19.37.136"),20000); //1);
+//udpSocket->bind(45454, QUdpSocket::ShareAddress); //Allow other services to bind to the same address and port
 
+connect(udpSocket, SIGNAL(readyRead()), this, SLOT(processPayloadPendingDatagrams()));
+qDebug() << "Socket bound to port 8000";
 }
 
 
-void Network::listen(){
-    emit Network::sendTextToUI("console","listening for messages");
-    //udpSocket->bind(45454, QUdpSocket::ShareAddress); //Allow other services to bind to the same address and port
-    //udpSocket->bind(QHostAddress("10.19.37.136"),20000); //1);
-    //QByteArray datagram = "startingUDP";
-    //udpSocket->writeDatagram(datagram, QHostAddress("10.19.37.136"), 20000);
-    //udpSocket->bind(QHostAddress::LocalHost, 8000);
-    udpSocket = new QUdpSocket(this);
-    QObject::connect(udpSocket, SIGNAL(readyRead()), this, SLOT(processPayloadPendingDatagrams()));
+void Network::initConnection(){
+    emit Network::sendTextToUI("console","Writing to port");
+    QByteArray datagram = "starting UDP";
+    udpSocket->writeDatagram(datagram, QHostAddress::LocalHost,8002);
 }
 
 
 void Network::processPayloadPendingDatagrams()
 {
-    QByteArray datagram;
-//! [2]
-    while (udpSocket->hasPendingDatagrams()) {
+    while (udpSocket->hasPendingDatagrams()) { // this function is blocking if there is a constant stream of data...
         datagram.resize(int(udpSocket->pendingDatagramSize()));
-        QHostAddress sender;
-        quint16 senderPort;
         udpSocket->readDatagram(datagram.data(), datagram.size(), &sender,&senderPort);
-        qDebug() << "Message receive: " << datagram.data();
         processDatagram(datagram, sender, senderPort);
-        emit sendTextToUI("console",datagram.constData());
+        //emit sendTextToUI("console",datagram.constData());
     }
-//! [2]
 }
 
 void Network::processDatagram(QNetworkDatagram datagram,QHostAddress sender, quint16 senderPort){
@@ -42,14 +37,12 @@ void Network::processDatagram(QNetworkDatagram datagram,QHostAddress sender, qui
     QString senderport = QString::number(senderPort);
     buffer = datagram.data();
     quint16 crc = qChecksum(buffer, buffer.size());
+    qDebug() << "crc: " << crc;
     QList<QString> sensorDataList;
-    qDebug("Sensor data received");
 
     int numSensors = 5; //should be declared as global
     //if((sender1 == "10.0.0.113") and (senderPort == 8001)){ //this should be globally, port and address of sender
     if (true){
-        qDebug("true");
-
         for (int i=0; i < numSensors;i++){
             float sensorData = getPart(buffer,i);
             QString b = QString::number(sensorData);
@@ -72,7 +65,8 @@ void Network::broadcastDatagram()
 //! [1]
     QByteArray datagram = "Broadcast message " + QByteArray::number(69);
     emit sendTextToUI("console","Now broadcasting datagram");
-    udpSocket->writeDatagram(datagram, QHostAddress("10.19.37.136"), 20000);
+    //udpSocket->writeDatagram(datagram, QHostAddress("10.19.37.136"), 20000);
+    udpSocket->writeDatagram(datagram, QHostAddress::LocalHost, 8002);
 //! [1]
     //++messageNo;
 }

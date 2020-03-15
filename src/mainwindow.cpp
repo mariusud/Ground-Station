@@ -22,19 +22,13 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+
+
     ui->setupUi(this);
     connect(ui->fire_rocket,SIGNAL(clicked()),SLOT(start_countdown()));
     connect(ui->cancel_firing, SIGNAL(clicked()), SLOT(reset_countdown()));
     qRegisterMetaType< QList<QString> >( "QList<QString>" );
-    Network network;
-    connect(&network, SIGNAL(sendPayloadToUI(const QList<QString>)), this, SLOT(display_payload(const QList<QString>)));
-    connect(&network, SIGNAL( sendTextToUI(const QString, const QString)), this, SLOT( display_message(const QString, const QString)));
-    QList<QString> s = {"first","second"};
-    emit network.sendPayloadToUI(s);
     //setup_media();
-    network.listen();
-    network.startBroadcasting();
-
 }
 
 MainWindow::~MainWindow()
@@ -84,6 +78,7 @@ void MainWindow::display_message(const QString &from, const QString &message ){
     \brief Sets up sensordata on ui form, also asserts that sensordata not empty to not get error
 */
 void MainWindow::display_payload(const QList<QString> &sensorDataList){
+    qDebug() << "displaying sensordata" << sensorDataList;
     QList<QString> sensordata = sensorDataList;
      //   TEMPERATURE, PRESSURE, SPEEDOVERGROUND, COURSEOVERGROUND, MAGNETICVARIATION, LONGITUDE,LATITUDE, ALTITUDE, ACCELERATION, ANGULARACCELERATION, CRCBYTES
     if(!sensordata.isEmpty()){ui->temperature->setText(sensordata.takeFirst());}
@@ -96,6 +91,7 @@ void MainWindow::display_payload(const QList<QString> &sensorDataList){
     if(!sensordata.isEmpty()){ui->current_altitude->setText(sensordata.takeFirst());}
     if(!sensordata.isEmpty()){ui->acceleration->setText(sensordata.takeFirst());}
     if(!sensordata.isEmpty()){ui->angularaccel->setText(sensordata.takeFirst());}
+    qDebug() << sensordata;
 
 }
 

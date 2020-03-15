@@ -5,6 +5,7 @@
 
 #include <QNetworkDatagram>
 
+//forward declaration of classes in use
 QT_BEGIN_NAMESPACE
 class QLabel;
 class QUdpSocket;
@@ -13,10 +14,13 @@ QT_END_NAMESPACE
 class Network : public QObject
 {
     Q_OBJECT
+    QByteArray datagram;
+    QHostAddress sender;
+    quint16 senderPort;
 public:
     explicit Network(QObject *parent = nullptr);
     void sendMessage(const QString &message);
-    void listen();
+    void initConnection();
     void startBroadcasting();
 
 signals:
@@ -34,7 +38,6 @@ private:
     QLabel *statusLabel = nullptr;
     QUdpSocket *udpSocket;
     QString StringBuffer;
-
     quint16 crc;
     const QString *address;
     QByteArray buffer;

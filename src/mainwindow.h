@@ -4,8 +4,6 @@
 #include <QMainWindow>
 #include <QMediaPlayer>
 
-#include "network.h"
-
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -26,7 +24,6 @@ public slots:
 
 private:
     Ui::MainWindow *ui;
-    //Network network; // construct network
 
 private slots:
     void start_countdown();

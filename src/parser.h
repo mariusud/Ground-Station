@@ -27,4 +27,6 @@ float stripString(QByteArray arrayString);
 
 void read_datagram();//QByteArray &buffer);
 
+bool check_sum();
+
 #endif // PARSER_H

@@ -41,3 +41,8 @@ float stripString(QByteArray arrayString){
     if (ok){return dec;}
     else {return -1;}
 }
+
+
+bool check_sum(){
+    return false;
+}
