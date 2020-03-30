@@ -81,16 +81,17 @@ void MainWindow::display_payload(const QList<QString> &sensorDataList){
     qDebug() << "displaying sensordata" << sensorDataList;
     QList<QString> sensordata = sensorDataList;
      //   TEMPERATURE, PRESSURE, SPEEDOVERGROUND, COURSEOVERGROUND, MAGNETICVARIATION, LONGITUDE,LATITUDE, ALTITUDE, ACCELERATION, ANGULARACCELERATION, CRCBYTES
-    if(!sensordata.isEmpty()){ui->temperature->setText(sensordata.takeFirst());}
-    if(!sensordata.isEmpty()){ui->pressure->setText(sensordata.takeFirst());}
-    if(!sensordata.isEmpty()){ui->speedoverground->setText(sensordata.takeFirst());}
-    if(!sensordata.isEmpty()){ui->courseoverground->setText(sensordata.takeFirst());}
-    if(!sensordata.isEmpty()){ui->magneticvariation->setText(sensordata.takeFirst());}
-    if(!sensordata.isEmpty()){ui->longitude->setText(sensordata.takeFirst());}
-    if(!sensordata.isEmpty()){ui->latitude->setText("S");}
-    if(!sensordata.isEmpty()){ui->current_altitude->setText(sensordata.takeFirst());}
-    if(!sensordata.isEmpty()){ui->acceleration->setText(sensordata.takeFirst());}
-    if(!sensordata.isEmpty()){ui->angularaccel->setText(sensordata.takeFirst());}
+    if(!sensordata.isEmpty()){ui->temperature->display(sensordata.takeFirst());}
+    if(!sensordata.isEmpty()){ui->pressure->display(sensordata.takeFirst());}
+    if(!sensordata.isEmpty()){ui->speed_over_ground->display(sensordata.takeFirst());}
+    if(!sensordata.isEmpty()){ui->course_over_ground->display(sensordata.takeFirst());}
+    if(!sensordata.isEmpty()){ui->magneticvariation->display(sensordata.takeFirst());}
+    if(!sensordata.isEmpty()){ui->longitude->display(sensordata.takeFirst());}
+    if(!sensordata.isEmpty()){ui->latitude->display(sensordata.takeFirst());}
+    if(!sensordata.isEmpty()){ui->current_altitude->display(sensordata.takeFirst());}
+    if(!sensordata.isEmpty()){ui->acceleration->display(sensordata.takeFirst());}
+
+    if(!sensordata.isEmpty()){ui->angularaccel->display(sensordata.takeFirst());}
     qDebug() << sensordata;
 
 }

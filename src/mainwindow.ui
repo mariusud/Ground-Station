@@ -921,7 +921,137 @@
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
      <layout class="QGridLayout" name="rootLayout">
-      <item row="1" column="5">
+      <item row="0" column="0">
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="4" column="0">
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="3" column="5">
+       <layout class="QGridLayout" name="gridLayout_8">
+        <item row="2" column="4">
+         <widget class="QCheckBox" name="checkBox_5">
+          <property name="text">
+           <string>Chute</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QCheckBox" name="checkBox_2">
+          <property name="text">
+           <string>Burnout</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QCheckBox" name="checkBox">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="text">
+           <string>Armed</string>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0" colspan="5">
+         <widget class="QPushButton" name="fire_rocket">
+          <property name="text">
+           <string>Fire rocket (T - 5)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="5" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+         <widget class="QLabel" name="label_3">
+          <property name="font">
+           <font>
+            <pointsize>25</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Rocket status</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QCheckBox" name="checkBox_3">
+          <property name="text">
+           <string>Brakes</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3">
+         <widget class="QCheckBox" name="checkBox_4">
+          <property name="text">
+           <string>Apogee</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0" colspan="5">
+         <widget class="QPushButton" name="cancel_firing">
+          <property name="text">
+           <string>Cancel firing</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0" colspan="5">
+         <widget class="QPushButton" name="pushButton_9">
+          <property name="text">
+           <string>Disarm Rocket</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0" colspan="5">
+         <widget class="QPushButton" name="pushButton_8">
+          <property name="text">
+           <string>Arm Rocket</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="2" column="2">
+       <widget class="QWidget" name="gridWidget" native="true">
+        <layout class="QGridLayout" name="gridLayout_6">
+         <item row="1" column="0">
+          <widget class="QTextEdit" name="textEdit"/>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_14">
+           <property name="text">
+            <string>Messages Received</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QGraphicsView" name="videostreamui"/>
+      </item>
+      <item row="2" column="5">
        <layout class="QGridLayout" name="gridLayout_2">
         <item row="3" column="0">
          <widget class="QPushButton" name="pushButton_3">
@@ -1037,361 +1167,7 @@
         </item>
        </layout>
       </item>
-      <item row="0" column="0">
-       <spacer name="horizontalSpacer_3">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="0" column="2">
-       <widget class="QLabel" name="label">
-        <property name="baseSize">
-         <size>
-          <width>100</width>
-          <height>100</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/new/prefix1/res/propulse_logo.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="2">
-       <widget class="QWidget" name="gridWidget" native="true">
-        <layout class="QGridLayout" name="gridLayout_6">
-         <item row="1" column="0">
-          <widget class="QTextEdit" name="textEdit"/>
-         </item>
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_14">
-           <property name="text">
-            <string>Messages Received</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QWidget" name="gridWidget_3" native="true">
-        <property name="maximumSize">
-         <size>
-          <width>1920</width>
-          <height>1080</height>
-         </size>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_7">
-         <item row="6" column="0">
-          <widget class="QLineEdit" name="lineEdit_7"/>
-         </item>
-         <item row="6" column="1">
-          <widget class="QLineEdit" name="magneticvariation"/>
-         </item>
-         <item row="1" column="1">
-          <widget class="QLabel" name="label_18">
-           <property name="text">
-            <string>Pressure (kPa)</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="label_19">
-           <property name="text">
-            <string>Temperature 2 (Celsius</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
-          <widget class="QLineEdit" name="pressure"/>
-         </item>
-         <item row="7" column="1">
-          <widget class="QLabel" name="label_20">
-           <property name="text">
-            <string>Free slot</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QLineEdit" name="temperature"/>
-         </item>
-         <item row="8" column="0">
-          <widget class="QLineEdit" name="lineEdit_11"/>
-         </item>
-         <item row="8" column="1">
-          <widget class="QLineEdit" name="lineEdit_12"/>
-         </item>
-         <item row="7" column="0">
-          <widget class="QLabel" name="label_21">
-           <property name="text">
-            <string>Temperature 3 (Celsius)</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="1">
-          <widget class="QLabel" name="label_22">
-           <property name="text">
-            <string>Magnetic Variation</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="label_23">
-           <property name="text">
-            <string>Temperature (Celsius)</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0" colspan="2" alignment="Qt::AlignHCenter">
-          <widget class="QLabel" name="label_24">
-           <property name="font">
-            <font>
-             <family>Liberation Mono</family>
-             <pointsize>25</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>Sensors</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QWidget" name="gridWidget_2" native="true">
-        <layout class="QGridLayout" name="gridLayout_3">
-         <item row="2" column="1">
-          <widget class="QLineEdit" name="maxacceleration"/>
-         </item>
-         <item row="3" column="1">
-          <widget class="QLabel" name="label_6">
-           <property name="text">
-            <string>Max Altitude (m)</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="1">
-          <widget class="QLineEdit" name="maxaltitude"/>
-         </item>
-         <item row="8" column="1">
-          <widget class="QLineEdit" name="latitude"/>
-         </item>
-         <item row="10" column="0">
-          <widget class="QLineEdit" name="angularaccel"/>
-         </item>
-         <item row="11" column="1">
-          <widget class="QLabel" name="label_12">
-           <property name="text">
-            <string>Course Over Ground</string>
-           </property>
-          </widget>
-         </item>
-         <item row="11" column="0">
-          <widget class="QLabel" name="label_11">
-           <property name="text">
-            <string>Speed over Ground</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="label_7">
-           <property name="text">
-            <string>Acceleration (m/s²)</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QLineEdit" name="acceleration"/>
-         </item>
-         <item row="8" column="0">
-          <widget class="QLineEdit" name="longitude"/>
-         </item>
-         <item row="12" column="0">
-          <widget class="QLineEdit" name="speedoverground"/>
-         </item>
-         <item row="12" column="1">
-          <widget class="QLineEdit" name="courseoverground"/>
-         </item>
-         <item row="10" column="1">
-          <widget class="QLineEdit" name="free"/>
-         </item>
-         <item row="7" column="1">
-          <widget class="QLabel" name="label_9">
-           <property name="text">
-            <string>Latitude</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="label_5">
-           <property name="text">
-            <string>Current Altitude (m)</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QLabel" name="label_8">
-           <property name="text">
-            <string>Max Acceleration (m/s²)</string>
-           </property>
-          </widget>
-         </item>
-         <item row="7" column="0">
-          <widget class="QLabel" name="longitude_2">
-           <property name="text">
-            <string>Longitude</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0" colspan="2" alignment="Qt::AlignHCenter">
-          <widget class="QLabel" name="label_13">
-           <property name="font">
-            <font>
-             <family>Liberation Mono</family>
-             <pointsize>25</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>Flight Data</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="0">
-          <widget class="QLineEdit" name="current_altitude"/>
-         </item>
-         <item row="9" column="0">
-          <widget class="QLabel" name="label_25">
-           <property name="text">
-            <string>Angular Acceleration</string>
-           </property>
-          </widget>
-         </item>
-         <item row="9" column="1">
-          <widget class="QLabel" name="label_26">
-           <property name="text">
-            <string>Free</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-      <item row="2" column="5">
-       <layout class="QGridLayout" name="gridLayout_8">
-        <item row="2" column="4">
-         <widget class="QCheckBox" name="checkBox_5">
-          <property name="text">
-           <string>Chute</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="1">
-         <widget class="QCheckBox" name="checkBox_2">
-          <property name="text">
-           <string>Burnout</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QCheckBox" name="checkBox">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="text">
-           <string>Armed</string>
-          </property>
-          <property name="checked">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="0" colspan="5">
-         <widget class="QPushButton" name="fire_rocket">
-          <property name="text">
-           <string>Fire rocket (T - 5)</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0" colspan="5" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-         <widget class="QLabel" name="label_3">
-          <property name="font">
-           <font>
-            <pointsize>25</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Rocket status</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="2">
-         <widget class="QCheckBox" name="checkBox_3">
-          <property name="text">
-           <string>Brakes</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="3">
-         <widget class="QCheckBox" name="checkBox_4">
-          <property name="text">
-           <string>Apogee</string>
-          </property>
-         </widget>
-        </item>
-        <item row="6" column="0" colspan="5">
-         <widget class="QPushButton" name="cancel_firing">
-          <property name="text">
-           <string>Cancel firing</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0" colspan="5">
-         <widget class="QPushButton" name="pushButton_9">
-          <property name="text">
-           <string>Disarm Rocket</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="0" colspan="5">
-         <widget class="QPushButton" name="pushButton_8">
-          <property name="text">
-           <string>Arm Rocket</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item row="0" column="5">
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap resource="logo.qrc">:/new/prefix1/res/Sleipner_nobkg.png</pixmap>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <spacer name="verticalSpacer">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="3" column="5">
+      <item row="4" column="5">
        <widget class="QLCDNumber" name="countdown_display">
         <property name="palette">
          <palette>
@@ -1441,8 +1217,199 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="2">
-       <widget class="QGraphicsView" name="videostreamui"/>
+      <item row="0" column="5">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="logo.qrc">:/new/prefix1/res/Sleipner_nobkg.png</pixmap>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QWidget" name="gridWidget_2" native="true">
+        <layout class="QGridLayout" name="gridLayout_3">
+         <item row="8" column="0">
+          <widget class="QLabel" name="label_25">
+           <property name="text">
+            <string>Angular Acceleration</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLCDNumber" name="maxacceleration_2"/>
+         </item>
+         <item row="10" column="1">
+          <widget class="QLabel" name="label_12">
+           <property name="text">
+            <string>Course Over Ground</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLCDNumber" name="current_altitude"/>
+         </item>
+         <item row="4" column="1">
+          <widget class="QLCDNumber" name="maxaltitude"/>
+         </item>
+         <item row="11" column="0">
+          <widget class="QLCDNumber" name="speed_over_ground"/>
+         </item>
+         <item row="9" column="0">
+          <widget class="QLCDNumber" name="angularaccel"/>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>Max Acceleration (m/s²)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="1">
+          <widget class="QLCDNumber" name="latitude"/>
+         </item>
+         <item row="7" column="0">
+          <widget class="QLCDNumber" name="longitude"/>
+         </item>
+         <item row="6" column="1">
+          <widget class="QLabel" name="label_9">
+           <property name="text">
+            <string>Latitude</string>
+           </property>
+          </widget>
+         </item>
+         <item row="11" column="1">
+          <widget class="QLCDNumber" name="course_over_ground"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>Acceleration (m/s²)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLCDNumber" name="acceleration"/>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="longitude_2">
+           <property name="text">
+            <string>Longitude</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>Current Altitude (m)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="0">
+          <widget class="QLabel" name="label_11">
+           <property name="text">
+            <string>Speed over Ground</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>Max Altitude (m)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" colspan="2" alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="label_13">
+           <property name="font">
+            <font>
+             <family>Liberation Mono</family>
+             <pointsize>25</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Flight Data</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="label">
+        <property name="baseSize">
+         <size>
+          <width>100</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/new/prefix1/res/propulse_logo.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QWidget" name="gridWidget_3" native="true">
+        <property name="maximumSize">
+         <size>
+          <width>1920</width>
+          <height>1080</height>
+         </size>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_7">
+         <item row="1" column="1">
+          <widget class="QLabel" name="label_18">
+           <property name="text">
+            <string>Pressure (kPa)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1">
+          <widget class="QLCDNumber" name="magneticvariation"/>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLabel" name="label_22">
+           <property name="text">
+            <string>Magnetic Variation</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLCDNumber" name="temperature"/>
+         </item>
+         <item row="0" column="0" colspan="2" alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="label_24">
+           <property name="font">
+            <font>
+             <family>Liberation Mono</family>
+             <pointsize>25</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Sensor Data</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_19">
+           <property name="text">
+            <string>Temperature 2 (Celsius</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLCDNumber" name="pressure"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_23">
+           <property name="text">
+            <string>Temperature (Celsius)</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
       </item>
      </layout>
     </item>

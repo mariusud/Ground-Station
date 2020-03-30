@@ -11,8 +11,9 @@ QT_END_NAMESPACE
 //#define sensorTall = 42;
 
 //extern QString g_some_string;
+#define g_port = 8001;
 
-
+//const uint g_port = 8001;
 
 enum sensorOrder {
     TEMPERATURE, PRESSURE, SPEEDOVERGROUND, COURSEOVERGROUND, MAGNETICVARIATION, LONGITUDE,LATITUDE, ALTITUDE, ACCELERATION, ANGULARACCELERATION, CRCBYTES
