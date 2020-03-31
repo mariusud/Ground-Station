@@ -49,14 +49,16 @@ bool check_sum(){
 }
 
 
+
 void write_to_file(QByteArray sensorData){
     QFile file("out.txt");
     if (!file.open(QIODevice::WriteOnly | QIODevice::Append)){
-        qDebug() << "could not open file";
-        //throw("could not open file");
+        throw("exception");
         return;
     }
+
     file.write(sensorData);
+    file.close();
 }
 
 

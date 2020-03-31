@@ -33,12 +33,9 @@ void Network::processPayloadPendingDatagrams()
         processDatagram(datagram, sender, senderPort);
         try {
             write_to_file(datagram.data());
-        } catch (std::exception &e) {
-            qDebug() << "received exception";
+        } catch (...) {
             emit sendTextToUI("console","Could not open file for writing.");
         }
-
-        //emit sendTextToUI("console",datagram.constData());
     }
 }
 

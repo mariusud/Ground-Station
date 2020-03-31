@@ -127,7 +127,7 @@ void MainWindow::setup_media(){
 void MainWindow::display_chart(){
     customChart *chart = new customChart;
     QChartView *chartView = new QChartView(chart);
-    chart->setTitle("Altitude of rocket");
+    chart->setTitle("Altitude of rocket (m)");
     //chart->setTheme(QChart::ChartThemeBlueCerulean);
     chart->setTheme(QChart::ChartThemeDark);
     chart->legend()->hide();

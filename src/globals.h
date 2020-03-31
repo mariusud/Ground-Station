@@ -1,7 +1,7 @@
 #ifndef GLOBALS_H
 #define GLOBALS_H
 #include <QtGlobal>
-
+#include <QHostAddress>
 
 // To not compile QString into every headerfile with globals which increases build time
 QT_BEGIN_NAMESPACE
