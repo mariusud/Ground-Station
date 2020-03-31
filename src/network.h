@@ -26,6 +26,8 @@ public:
 signals:
     void sendPayloadToUI(const QList<QString> &sensorDataList);
     void sendTextToUI( const QString &from, const QString &message);
+    void newMaxAcceleration(const double value);
+    void newMaxAltitude(const double value);
 
 private slots:
     void processPayloadPendingDatagrams(); // for reading udp message byte for byte
@@ -41,6 +43,8 @@ private:
     quint16 crc;
     const QString *address;
     QByteArray buffer;
+    double maxAccel;
+    double maxAltitude;
 
 };
 

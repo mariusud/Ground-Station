@@ -101,6 +101,14 @@ void MainWindow::display_payload(const QList<QString> &sensorDataList){
 }
 
 
+void MainWindow::update_maxacceleration(const double value){
+    ui->maxacceleration->display(value);
+}
+
+void MainWindow::update_maxaltitude(const double value){
+    ui->maxaltitude->display(value);
+}
+
 /*!
     \class MainWindow::setupmedia()
 

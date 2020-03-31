@@ -22,6 +22,8 @@ public:
 public slots:
     void display_message(const QString &from, const QString &message);
     void display_payload(const QList<QString> &sensorDataList);
+    void update_maxacceleration(const double value);
+    void update_maxaltitude(const double value);
 
 private:
     Ui::MainWindow *ui;

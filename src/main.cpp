@@ -2,7 +2,7 @@
 #include "network.h"
 
 #include <QApplication>
-#include "parser.h"
+#include "dataprocessing.h"
 #include <QFontDatabase>
 #include <QFile>
 int main(int argc, char *argv[])
@@ -17,6 +17,9 @@ int main(int argc, char *argv[])
 
     QObject::connect(&network, SIGNAL(sendPayloadToUI(const QList<QString>)), &w, SLOT(display_payload(const QList<QString>)));
     QObject::connect(&network, SIGNAL( sendTextToUI(const QString, const QString)), &w, SLOT( display_message(const QString, const QString)));
+
+    QObject::connect(&network, SIGNAL( newMaxAcceleration(const double)), &w, SLOT( update_maxacceleration(const double)));
+    QObject::connect(&network, SIGNAL( newMaxAltitude(const double)), &w, SLOT( update_maxaltitude(const double)));
 
     network.initConnection();
     network.startBroadcasting();

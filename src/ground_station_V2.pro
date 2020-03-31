@@ -19,19 +19,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     connection.cpp \
     customchart.cpp \
+    dataprocessing.cpp \
     globals.cpp \
     main.cpp \
     mainwindow.cpp \
-    network.cpp \
-    parser.cpp
+    network.cpp
 
 HEADERS += \
     connection.h \
     customchart.h \
+    dataprocessing.h \
     globals.h \
     mainwindow.h \
-    network.h \
-    parser.h
+    network.h
 
 FORMS += \
     mainwindow.ui

@@ -1060,7 +1060,7 @@
           <widget class="QLCDNumber" name="temperature"/>
          </item>
          <item row="2" column="1">
-          <widget class="QLCDNumber" name="maxacceleration_2"/>
+          <widget class="QLCDNumber" name="maxacceleration"/>
          </item>
          <item row="8" column="1">
           <widget class="QLabel" name="label_22">

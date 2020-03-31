@@ -1,5 +1,5 @@
-#ifndef PARSER_H
-#define PARSER_H
+#ifndef DATAPROCESSING_H
+#define DATAPROCESSING_H
 #include <stdint.h>
 #include <QByteArray>
 
@@ -13,4 +13,4 @@ void read_datagram();//QByteArray &buffer);
 
 bool check_sum();
 
-#endif // PARSER_H
+#endif // DATAPROCESSING_H
