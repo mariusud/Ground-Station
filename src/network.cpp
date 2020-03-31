@@ -12,7 +12,7 @@ udpSocket->bind(QHostAddress::LocalHost, g_port);
 //udpSocket->bind(45454, QUdpSocket::ShareAddress); //Allow other services to bind to the same address and port
 
 connect(udpSocket, SIGNAL(readyRead()), this, SLOT(processPayloadPendingDatagrams()));
-qDebug() << "Socket bound to port 8000";
+qDebug() << "Socket bound to port: " << g_port;
 }
 
 

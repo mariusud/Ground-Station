@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QMediaPlayer>
+#include "customchart.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -16,14 +17,15 @@ public:
     MainWindow(QWidget *parent = nullptr);
     void setup_media();
     ~MainWindow();
+    void display_chart();
 
 public slots:
     void display_message(const QString &from, const QString &message);
     void display_payload(const QList<QString> &sensorDataList);
 
-
 private:
     Ui::MainWindow *ui;
+    customChart *chart;
 
 private slots:
     void start_countdown();

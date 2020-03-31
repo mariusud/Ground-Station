@@ -2,5 +2,10 @@
     <qresource prefix="/new/prefix1">
         <file>../res/propulse_logo.png</file>
         <file>../res/Sleipner_nobkg.png</file>
+        <file>../res/logo_v3_bla.png</file>
+        <file>../res/mission_logo_final_full_gradient.png</file>
+        <file>../res/logo_v3_bla_resized.png</file>
+        <file>../res/rsz_2rsz_1rsz_mission_logo_final_full_gradient.png</file>
+        <file>../res/fonts/spaceage.ttf</file>
     </qresource>
 </RCC>

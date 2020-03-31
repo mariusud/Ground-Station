@@ -1,4 +1,4 @@
-QT       += core gui uiplugin widgets multimediawidgets multimedia network
+QT       += core gui uiplugin widgets multimediawidgets multimedia network charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets core gui uiplugin widgets multimediawidgets multimedia
 #requires(qtConfig(udpsocket))
@@ -18,6 +18,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     connection.cpp \
+    customchart.cpp \
     globals.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -26,6 +27,7 @@ SOURCES += \
 
 HEADERS += \
     connection.h \
+    customchart.h \
     globals.h \
     mainwindow.h \
     network.h \

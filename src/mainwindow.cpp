@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "customchart.h"
+
 
 #include <QTimer>
 #include <QTime>
@@ -13,6 +15,9 @@
 #include <QDebug>
 #include <QString>
 
+#include <QtCharts>
+
+
 QElapsedTimer etimer;
 QTimer* timer = new QTimer();
 auto countdown=QTime(0,0,5);
@@ -23,17 +28,19 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
 
-
     ui->setupUi(this);
+    //ui->rootWidget->setFont();
     connect(ui->fire_rocket,SIGNAL(clicked()),SLOT(start_countdown()));
     connect(ui->cancel_firing, SIGNAL(clicked()), SLOT(reset_countdown()));
     qRegisterMetaType< QList<QString> >( "QList<QString>" );
     //setup_media();
+    display_chart();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+    chart->~customChart();
 }
 
 void MainWindow::start_countdown(){
@@ -90,10 +97,7 @@ void MainWindow::display_payload(const QList<QString> &sensorDataList){
     if(!sensordata.isEmpty()){ui->latitude->display(sensordata.takeFirst());}
     if(!sensordata.isEmpty()){ui->current_altitude->display(sensordata.takeFirst());}
     if(!sensordata.isEmpty()){ui->acceleration->display(sensordata.takeFirst());}
-
     if(!sensordata.isEmpty()){ui->angularaccel->display(sensordata.takeFirst());}
-    qDebug() << sensordata;
-
 }
 
 
@@ -108,10 +112,22 @@ void MainWindow::setup_media(){
 
     QGraphicsScene *scene = new QGraphicsScene;
 
-    ui->videostreamui->setScene(scene);
+    //ui->videostreamui->setScene(scene);
     player->setMedia(QUrl("udp://@:8003"));
     player->play();
 
+}
+
+void MainWindow::display_chart(){
+    customChart *chart = new customChart;
+    QChartView *chartView = new QChartView(chart);
+    chart->setTitle("Altitude of rocket");
+    //chart->setTheme(QChart::ChartThemeBlueCerulean);
+    chart->setTheme(QChart::ChartThemeDark);
+    chart->legend()->hide();
+    chart->setAnimationOptions(QChart::AllAnimations);
+    chartView->setRenderHint(QPainter::Antialiasing);
+     ui->chartLayout->addWidget(chartView);
 }
 
 
