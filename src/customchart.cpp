@@ -49,6 +49,7 @@ customChart::~customChart()
     m_series = nullptr;
     yRangeNegative = -5;
     yRangePositive = 10;
+    removeSeries(m_series);
 }
 
 void customChart::handleTimeout()
@@ -71,7 +72,6 @@ void customChart::update() {
     double tick_dx = plotArea().width() / axisX->tickCount()*dx;
     if (x > g_CHART_XRANGE) // Start scrolling when plot is out of range
         scroll(tick_dx,0);
-    qDebug() << "yrangepos" << yRangePositive;
     m_series->append(x, y);
     if (y > yRangePositive) {
         yRangePositive = y + g_CHART_YRANGE_STEPFACTOR;

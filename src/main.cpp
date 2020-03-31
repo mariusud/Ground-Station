@@ -10,6 +10,9 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     MainWindow w;
     Network network;
+    a.setApplicationName("PGSS");
+    a.setOrganizationName("Propulse NTNU");
+    a.setOrganizationDomain("www.propulsentnu.no");
 
     QFontDatabase::addApplicationFont(":/../res/fonts/spaceage.ttf");
     QFile file("qrc:/new/res/fonts/spaceage.ttf");

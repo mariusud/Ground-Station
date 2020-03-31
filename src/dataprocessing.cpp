@@ -2,6 +2,7 @@
 
 #include <QDebug>
 #include <QString>
+#include <QFile>
 
 
 float getPart(const QByteArray message, int part)
@@ -46,3 +47,17 @@ float stripString(QByteArray arrayString){
 bool check_sum(){
     return false;
 }
+
+
+void write_to_file(QByteArray sensorData){
+    QFile file("out.txt");
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Append)){
+        qDebug() << "could not open file";
+        //throw("could not open file");
+        return;
+    }
+    file.write(sensorData);
+}
+
+
+

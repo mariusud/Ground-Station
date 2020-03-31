@@ -31,6 +31,13 @@ void Network::processPayloadPendingDatagrams()
         datagram.resize(int(udpSocket->pendingDatagramSize()));
         udpSocket->readDatagram(datagram.data(), datagram.size(), &sender,&senderPort);
         processDatagram(datagram, sender, senderPort);
+        try {
+            write_to_file(datagram.data());
+        } catch (std::exception &e) {
+            qDebug() << "received exception";
+            emit sendTextToUI("console","Could not open file for writing.");
+        }
+
         //emit sendTextToUI("console",datagram.constData());
     }
 }
@@ -39,8 +46,7 @@ void Network::processDatagram(QNetworkDatagram datagram,QHostAddress sender, qui
     QString sender1 = sender.toString();
     QString senderport = QString::number(senderPort);
     buffer = datagram.data();
-    quint16 crc = qChecksum(buffer, buffer.size());
-    qDebug() << "crc: " << crc;
+    quint16 crc = qChecksum(buffer, buffer.size()); //check_sum here
     QList<QString> sensorDataList;
 
     //if((sender1 == "10.0.0.113") and (senderPort == 8001)){ //this should be globally, port and address of sender
@@ -73,13 +79,10 @@ void Network::startBroadcasting()
 
 void Network::broadcastDatagram()
 {
-//! [1]
     QByteArray datagram = "Broadcast message " + QByteArray::number(69);
     emit sendTextToUI("console","Now broadcasting datagram");
     //udpSocket->writeDatagram(datagram, QHostAddress("10.19.37.136"), 20000);
     udpSocket->writeDatagram(datagram, QHostAddress::LocalHost, g_port);
-//! [1]
-    //++messageNo;
 }
 
 

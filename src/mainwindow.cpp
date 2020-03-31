@@ -85,9 +85,7 @@ void MainWindow::display_message(const QString &from, const QString &message ){
     \brief Sets up sensordata on ui form, also asserts that sensordata not empty to not get error
 */
 void MainWindow::display_payload(const QList<QString> &sensorDataList){
-    qDebug() << "displaying sensordata" << sensorDataList;
     QList<QString> sensordata = sensorDataList;
-     //   TEMPERATURE, PRESSURE, SPEEDOVERGROUND, COURSEOVERGROUND, MAGNETICVARIATION, LONGITUDE,LATITUDE, ALTITUDE, ACCELERATION, ANGULARACCELERATION, CRCBYTES
     if(!sensordata.isEmpty()){ui->temperature->display(sensordata.takeFirst());}
     if(!sensordata.isEmpty()){ui->pressure->display(sensordata.takeFirst());}
     if(!sensordata.isEmpty()){ui->speed_over_ground->display(sensordata.takeFirst());}

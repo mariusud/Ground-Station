@@ -930,10 +930,21 @@
        <widget class="QWidget" name="gridWidget_2" native="true">
         <layout class="QGridLayout" name="gridLayout_3">
          <item row="9" column="0">
-          <widget class="QLCDNumber" name="angularaccel"/>
+          <widget class="QLCDNumber" name="angularaccel">
+           <property name="value" stdset="0">
+            <double>0.570000000000000</double>
+           </property>
+          </widget>
          </item>
          <item row="7" column="0">
-          <widget class="QLCDNumber" name="longitude"/>
+          <widget class="QLCDNumber" name="longitude">
+           <property name="digitCount">
+            <number>8</number>
+           </property>
+           <property name="value" stdset="0">
+            <double>63.434460999999999</double>
+           </property>
+          </widget>
          </item>
          <item row="12" column="0">
           <widget class="QLabel" name="label_23">
@@ -952,7 +963,7 @@
          <item row="10" column="0">
           <widget class="QLabel" name="label_11">
            <property name="text">
-            <string>Speed over Ground</string>
+            <string>Speed over Ground (km/h)</string>
            </property>
           </widget>
          </item>
@@ -978,7 +989,11 @@
           </widget>
          </item>
          <item row="11" column="1">
-          <widget class="QLCDNumber" name="course_over_ground"/>
+          <widget class="QLCDNumber" name="course_over_ground">
+           <property name="value" stdset="0">
+            <double>50.622300000000003</double>
+           </property>
+          </widget>
          </item>
          <item row="0" column="0" colspan="2" alignment="Qt::AlignHCenter">
           <widget class="QLabel" name="label_13">
@@ -994,12 +1009,16 @@
           </widget>
          </item>
          <item row="11" column="0">
-          <widget class="QLCDNumber" name="speed_over_ground"/>
+          <widget class="QLCDNumber" name="speed_over_ground">
+           <property name="value" stdset="0">
+            <double>6.770000000000000</double>
+           </property>
+          </widget>
          </item>
          <item row="10" column="1">
           <widget class="QLabel" name="label_12">
            <property name="text">
-            <string>Course Over Ground</string>
+            <string>Course Over Ground (deg)</string>
            </property>
           </widget>
          </item>
@@ -1021,15 +1040,31 @@
            <property name="autoFillBackground">
             <bool>false</bool>
            </property>
+           <property name="mode">
+            <enum>QLCDNumber::Dec</enum>
+           </property>
+           <property name="segmentStyle">
+            <enum>QLCDNumber::Filled</enum>
+           </property>
+           <property name="value" stdset="0">
+            <double>1.889000000000000</double>
+           </property>
+           <property name="intValue" stdset="0">
+            <number>2</number>
+           </property>
           </widget>
          </item>
          <item row="13" column="1">
-          <widget class="QLCDNumber" name="pressure"/>
+          <widget class="QLCDNumber" name="pressure">
+           <property name="value" stdset="0">
+            <double>26.399999999999999</double>
+           </property>
+          </widget>
          </item>
          <item row="8" column="0">
           <widget class="QLabel" name="label_25">
            <property name="text">
-            <string>Angular Acceleration</string>
+            <string>Angular Acceleration (m/s²)</string>
            </property>
           </widget>
          </item>
@@ -1041,10 +1076,18 @@
           </widget>
          </item>
          <item row="4" column="0">
-          <widget class="QLCDNumber" name="current_altitude"/>
+          <widget class="QLCDNumber" name="current_altitude">
+           <property name="value" stdset="0">
+            <double>9870.000000000000000</double>
+           </property>
+          </widget>
          </item>
          <item row="4" column="1">
-          <widget class="QLCDNumber" name="maxaltitude"/>
+          <widget class="QLCDNumber" name="maxaltitude">
+           <property name="intValue" stdset="0">
+            <number>1030</number>
+           </property>
+          </widget>
          </item>
          <item row="6" column="1">
           <widget class="QLabel" name="label_9">
@@ -1054,13 +1097,28 @@
           </widget>
          </item>
          <item row="7" column="1">
-          <widget class="QLCDNumber" name="latitude"/>
+          <widget class="QLCDNumber" name="latitude">
+           <property name="digitCount">
+            <number>8</number>
+           </property>
+           <property name="value" stdset="0">
+            <double>10.416283000000000</double>
+           </property>
+          </widget>
          </item>
          <item row="13" column="0">
-          <widget class="QLCDNumber" name="temperature"/>
+          <widget class="QLCDNumber" name="temperature">
+           <property name="value" stdset="0">
+            <double>-10.400000000000000</double>
+           </property>
+          </widget>
          </item>
          <item row="2" column="1">
-          <widget class="QLCDNumber" name="maxacceleration"/>
+          <widget class="QLCDNumber" name="maxacceleration">
+           <property name="value" stdset="0">
+            <double>6.554000000000000</double>
+           </property>
+          </widget>
          </item>
          <item row="8" column="1">
           <widget class="QLabel" name="label_22">
@@ -1070,7 +1128,11 @@
           </widget>
          </item>
          <item row="9" column="1">
-          <widget class="QLCDNumber" name="magneticvariation"/>
+          <widget class="QLCDNumber" name="magneticvariation">
+           <property name="value" stdset="0">
+            <double>0.320000000000000</double>
+           </property>
+          </widget>
          </item>
         </layout>
        </widget>

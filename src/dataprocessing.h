@@ -12,5 +12,6 @@ float stripString(QByteArray arrayString);
 void read_datagram();//QByteArray &buffer);
 
 bool check_sum();
+void write_to_file(QByteArray sensorData);
 
 #endif // DATAPROCESSING_H
