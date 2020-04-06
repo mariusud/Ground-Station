@@ -11,7 +11,6 @@ udpSocket->bind(QHostAddress::LocalHost, g_port);
 //udpSocket->bind(QHostAddress("10.19.37.136"),20000); //1);
 //udpSocket->bind(45454, QUdpSocket::ShareAddress); //Allow other services to bind to the same address and port
 
-connect(udpSocket, SIGNAL(readyRead()), this, SLOT(processPayloadPendingDatagrams()));
 qDebug() << "Socket bound to port: " << g_port;
 maxAccel = 0;
 maxAltitude = 0;
@@ -19,11 +18,10 @@ maxAltitude = 0;
 
 
 void Network::initConnection(){
-    emit Network::sendTextToUI("console","Initializing connection: writing to port");
+    emit sendTextToUI("console","Initializing connection: writing to port");
     QByteArray datagram = "starting UDP";
     udpSocket->writeDatagram(datagram, QHostAddress::LocalHost,g_port);
 }
-
 
 void Network::processPayloadPendingDatagrams()
 {
@@ -67,20 +65,16 @@ void Network::processDatagram(QNetworkDatagram datagram,QHostAddress sender, qui
 }
 
 
-void Network::startBroadcasting()
-{
-    //startButton->setEnabled(false); //create button that starts udp broadcasting
-    //timer.start(1000);
-    this->broadcastDatagram();
+
+void Network::startReading(){
+
+    connect(udpSocket, SIGNAL(readyRead()), this, SLOT(processPayloadPendingDatagrams()));
+    emit sendTextToUI("console","Now reading network data");
+
 }
 
-void Network::broadcastDatagram()
-{
-    QByteArray datagram = "Broadcast message " + QByteArray::number(69);
-    emit sendTextToUI("console","Now broadcasting datagram");
-    //udpSocket->writeDatagram(datagram, QHostAddress("10.19.37.136"), 20000);
-    udpSocket->writeDatagram(datagram, QHostAddress::LocalHost, g_port);
-}
+
+
 
 
 

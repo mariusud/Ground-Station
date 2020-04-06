@@ -17,7 +17,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    connection.cpp \
     customchart.cpp \
     dataprocessing.cpp \
     globals.cpp \
@@ -26,7 +25,6 @@ SOURCES += \
     network.cpp
 
 HEADERS += \
-    connection.h \
     customchart.h \
     dataprocessing.h \
     globals.h \

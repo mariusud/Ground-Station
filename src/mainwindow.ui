@@ -1047,7 +1047,7 @@
             <enum>QLCDNumber::Filled</enum>
            </property>
            <property name="value" stdset="0">
-            <double>1.889000000000000</double>
+            <double>2.000000000000000</double>
            </property>
            <property name="intValue" stdset="0">
             <number>2</number>
@@ -1161,16 +1161,16 @@
          </widget>
         </item>
         <item row="3" column="0" colspan="5">
-         <widget class="QPushButton" name="pushButton_8">
+         <widget class="QPushButton" name="initializing">
           <property name="text">
            <string>Send Initializing message</string>
           </property>
          </widget>
         </item>
         <item row="4" column="0" colspan="5">
-         <widget class="QPushButton" name="pushButton_9">
+         <widget class="QPushButton" name="startRead">
           <property name="text">
-           <string>Turn on camera</string>
+           <string>Start reading data</string>
           </property>
          </widget>
         </item>

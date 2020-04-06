@@ -32,6 +32,9 @@ MainWindow::MainWindow(QWidget *parent)
     //ui->rootWidget->setFont();
     connect(ui->fire_rocket,SIGNAL(clicked()),SLOT(start_countdown()));
     connect(ui->cancel_firing, SIGNAL(clicked()), SLOT(reset_countdown()));
+    connect(ui->startRead, SIGNAL(clicked()), SLOT(pubReadyReadClicked()));
+    connect(ui->initializing, SIGNAL(clicked()), SLOT(pubInitializationClicked()));
+
     qRegisterMetaType< QList<QString> >( "QList<QString>" );
     //setup_media();
     display_chart();
@@ -61,6 +64,15 @@ void MainWindow::update_countdown()
     auto c=countdown.addMSecs(-elapsed);
     QString timestr = c.toString("hh:mm:ss.zzz");
     ui->countdown_display->display((timestr));
+}
+
+void MainWindow::pubReadyReadClicked(){
+    emit readyReadClicked();
+}
+//these two are to allow connection of signal from ui to network, since the ui is a private member of mainwindow.
+
+void MainWindow::pubInitializationClicked(){
+    emit initializationClicked();
 }
 
 

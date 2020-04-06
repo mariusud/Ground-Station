@@ -19,6 +19,10 @@ public:
     ~MainWindow();
     void display_chart();
 
+signals:
+    void readyReadClicked();
+    void initializationClicked();
+
 public slots:
     void display_message(const QString &from, const QString &message);
     void display_payload(const QList<QString> &sensorDataList);
@@ -33,6 +37,8 @@ private slots:
     void start_countdown();
     void reset_countdown();
     void update_countdown();
+    void pubReadyReadClicked();
+    void pubInitializationClicked();
 
 };
 #endif // MAINWINDOW_H

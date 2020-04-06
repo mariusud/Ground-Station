@@ -20,8 +20,10 @@ class Network : public QObject
 public:
     explicit Network(QObject *parent = nullptr);
     void sendMessage(const QString &message);
+
+public slots:
+    void startReading();
     void initConnection();
-    void startBroadcasting();
 
 signals:
     void sendPayloadToUI(const QList<QString> &sensorDataList);
@@ -31,7 +33,6 @@ signals:
 
 private slots:
     void processPayloadPendingDatagrams(); // for reading udp message byte for byte
-    void broadcastDatagram();
 
 
 
