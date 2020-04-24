@@ -1,6 +1,6 @@
 # Ground station software
 A ground station software build for the rocketry project **Propulse NTNU**
-Go check that out here: [link]https://www.propulsentnu.no/
+Go check that out here: https://www.propulsentnu.no/
 
 To install this package, simply run the ground-station installer file found in `installer/`
 ## Details

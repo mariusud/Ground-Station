@@ -7,7 +7,7 @@
     <Default>true</Default>
     <RemoteRepositories>
         <Repository>
-            <Url>http://localhost/repository/</Url>
+            <Url>https://code.qt.io/cgit/qt/qt5.git/log/?h=5.14</Url>
         </Repository>
     </RemoteRepositories>
 </Package>
