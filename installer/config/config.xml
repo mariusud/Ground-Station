@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+    <Name>Propulse Ground Station software</Name>
+    <Version>1.0.0</Version>
+    <Title>Propulse Ground Station software Installer</Title>
+    <Publisher>Marius U.</Publisher>
+    <StartMenuDir>ground-station</StartMenuDir>
+    <TargetDir>@HomeDir@/Development/ground-station</TargetDir>
+</Installer>

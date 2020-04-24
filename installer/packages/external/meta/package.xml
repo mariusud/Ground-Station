@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package>
+    <DisplayName>External required software</DisplayName>
+    <Description>Dependencies for the software</Description>
+    <Version>0.1.0-1</Version>
+    <ReleaseDate>2020-04-24</ReleaseDate>
+    <Default>true</Default>
+    <RemoteRepositories>
+        <Repository>
+            <Url>http://localhost/repository/</Url>
+        </Repository>
+    </RemoteRepositories>
+</Package>
