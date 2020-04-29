@@ -2,7 +2,15 @@
 A ground station software build for the rocketry project **Propulse NTNU**
 Go check that out here: https://www.propulsentnu.no/
 
-To install this package, simply run the ground-station installer file found in `installer/`
+To install this package and containing requirements:
+To download, do:   
+ `wget http://download.qt.io/official_releases/qt/5.14/5.14.0/qt-opensource-linux-x64-5.14.0.run`   
+ `chmod +x qt-opensource-linux-x64-5.14.0.run`    
+ `./qt-opensource-linux-x64-5.14.0.run`    
+ `sudo apt-get install $(cat pkglist)    `
+
+ to run, type 
+ `./installer/installer-framework/packages/internal/ground_station_V2`
 ## Details
 - Built in Qt5 with C++ using a Designer ui file
 - contains a network module that connects to the rocket to communicate over UDP

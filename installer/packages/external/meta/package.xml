@@ -7,7 +7,7 @@
     <Default>true</Default>
     <RemoteRepositories>
         <Repository>
-            <Url>https://code.qt.io/cgit/qt/qt5.git/log/?h=5.14</Url>
+            <Url>http://download.qt.io/official_releases/qt/5.14/5.14.0/qt-opensource-linux-x64-5.14.0.run</Url>
         </Repository>
     </RemoteRepositories>
 </Package>

@@ -1,0 +1,4 @@
+build-essential
+qt5-default
+qtdeclarative5-dev
+qtbase5-dev
